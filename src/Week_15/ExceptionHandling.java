@@ -33,12 +33,12 @@ public class ExceptionHandling {
         exceptionWithTryCatch();
         Thread.sleep(1000);
         try {
-            exceptionWithThrowsAndTryCatch();
+            exceptionWithThrows();
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Catching exception in main method: \n" + e);
         }
         Thread.sleep(1000);
-        exceptionWithThrows();
+        exceptionWithIfStatementAndThrows();
     }
 
     /**
@@ -48,7 +48,7 @@ public class ExceptionHandling {
      *
      * @throws ArrayIndexOutOfBoundsException
      */
-    public static void exceptionWithThrowsAndTryCatch() throws ArrayIndexOutOfBoundsException {
+    public static void exceptionWithThrows() throws ArrayIndexOutOfBoundsException {
         char[] matrix = new char[]{'H', 'e', 'l', 'l', 'o'};
         System.out.println(matrix);
 
@@ -57,10 +57,11 @@ public class ExceptionHandling {
         }
     }
 
-    /***
+    /**
+     * *
      * This method will check for exceptions on a certain portion of the code.
-     * The calling method doesn't throw or catch any exceptions, as they are being
-     * handled by this method itself.
+     * The calling method doesn't throw or catch any exceptions, as they are
+     * being handled by this method itself.
      */
     public static void exceptionWithTryCatch() {
         char[] matrix = new char[]{'H', 'e', 'l', 'l', 'o'};
@@ -74,11 +75,14 @@ public class ExceptionHandling {
                     + "exceptionWithTryCatch: \n" + e);
         }
     }
-    /***
-     * This method doesn't use try-catch block but instead it checks for errors using 
-     * if statement. Then when the error is discovered it will throw a new exception.
+
+    /**
+     * *
+     * This method doesn't use try-catch block but instead it checks for errors
+     * using if statement. Then when the error is discovered it will throw a new
+     * exception.
      */
-    public static void exceptionWithThrows(){
+    public static void exceptionWithIfStatementAndThrows() {
         char[] matrix = new char[]{'H', 'e', 'l', 'l', 'o'};
         System.out.println(matrix);
 
@@ -90,7 +94,9 @@ public class ExceptionHandling {
             }
         }
     }
-    /***
+
+    /**
+     * *
      * Method that is called by finally block from main method
      */
     public static void endOfMethods() {
