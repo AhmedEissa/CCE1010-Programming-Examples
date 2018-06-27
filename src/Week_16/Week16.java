@@ -9,6 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -39,6 +40,10 @@ public class Week16 extends Application {
         it is used for purpose of receiving a text input from the users.
          */
         TextField firstNameTextField = new TextField();
+        /*
+        setPromptText is used for purpose of setting up a hint for a user
+        so they do understand the purpose of the field
+        */
         firstNameTextField.setPromptText("First Name");
         TextField surnameTextField = new TextField();
         surnameTextField.setPromptText("Surname");
@@ -48,6 +53,9 @@ public class Week16 extends Application {
          */
         Button submitButton = new Button();
         submitButton.setText("Greetings");
+        
+        Label firstNameLabel = new Label("First name: ");
+        Label surnameLabel = new Label("Surname: ");
         /*
         setOnAction is a method used for purpose of creating 
         an action hanlder used for handling an action that user has performed
@@ -90,20 +98,22 @@ public class Week16 extends Application {
         Padding is used for setting how much space is 
         added from each side of the screen
         */
-        root.setPadding(new Insets(70, 70, 70, 70));
+        root.setPadding(new Insets(50, 50, 50, 50));
         /*
         GridPane.setConstraints is used for setting the location of the grid
         to which the node is going to be place on
         */
-        GridPane.setConstraints(firstNameTextField, 0, 0);
-        GridPane.setConstraints(surnameTextField, 0, 1);
-        GridPane.setConstraints(submitButton, 0, 2);
+        GridPane.setConstraints(firstNameLabel, 0, 0);
+        GridPane.setConstraints(firstNameTextField, 1, 0);
+        GridPane.setConstraints(surnameLabel, 0, 1);
+        GridPane.setConstraints(surnameTextField, 1, 1);
+        GridPane.setConstraints(submitButton, 1, 2);
         /*
         The nodes have to be added to pane by either using addAll or add method
         the addAll method will add all the nodes in the order they were written
         and the add method will only add a single node
         */
-        root.getChildren().addAll(submitButton, firstNameTextField,
+        root.getChildren().addAll(surnameLabel,firstNameLabel,submitButton, firstNameTextField,
                 surnameTextField);
         /*
         Scene is used for purpose of handling all the nodes 
@@ -134,7 +144,7 @@ public class Week16 extends Application {
         } else if (alert.getResult() == ButtonType.NO) {
             replyConfirmation("Whoops sorry! Try again =(");
         } else if (alert.getResult() == ButtonType.CANCEL) {
-            replyConfirmation("ohh ok bye then.");
+            replyConfirmation("ohh ok, bye then.");
         }
     }
 
