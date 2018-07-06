@@ -6,12 +6,20 @@ public class Array2D {
         randomShuffling();
     }
 
+    /*
+    Example of setting up 2D array, when the array is initialized
+    */
+    
     public static void writingTo2DArrayExample1() {
         int[][] numbers = new int[][]{
             {0, 1, 2},
             {3, 4, 5}
         };
     }
+    
+    /*
+    Example of setting up array one block at the time
+    */
 
     public static void writingTo2DArrayExample2() {
         int[][] numbers = new int[2][3];
@@ -21,8 +29,11 @@ public class Array2D {
         numbers[1][0] = 3;
         numbers[1][1] = 4;
         numbers[1][2] = 5;
-
     }
+    
+    /* 
+    Example of filling up 2D array with 2 for loops
+    */
 
     public static int[][] writingTo2DArrayExample3() {
         int[][] numbers = new int[2][3];
@@ -33,6 +44,10 @@ public class Array2D {
         }
         return numbers;
     }
+    
+    /* 
+    Example of reading values from array one block at the time
+    */
 
     public static void readingFrom2DArrayExample1() {
         int[][] numbers = writingTo2DArrayExample3();
@@ -43,6 +58,10 @@ public class Array2D {
         System.out.println(numbers[1][1]);
         System.out.println(numbers[1][2]);
     }
+    
+    /* 
+    Example of reading 2D array using two for loops
+    */
 
     public static void readingFrom2DArrayExample2() {
         int[][] numbers = writingTo2DArrayExample3();
@@ -52,9 +71,20 @@ public class Array2D {
             }
         }
     }
+    
+    /*
+    Example of shuffling a 2D array by using a combination of for loop and 
+    if statement. 
+    
+    The array will be provided by the writingTo2DArrayExample3 method that will
+    return a 2D array.
+    
+    The original and shuffled array will then be compared by passing both arrays
+    as parameters to comparingShuffledArrayToOriginalArray method
+    */
 
     public static void randomShuffling() {
-
+        
         int[][] numbers = writingTo2DArrayExample3();
 
         for (int i = 0; i < numbers.length; i++) {
@@ -79,5 +109,4 @@ public class Array2D {
             }
         }
     }
-
 }
