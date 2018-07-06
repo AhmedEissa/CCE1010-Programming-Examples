@@ -3,7 +3,7 @@ package Week_09;
 public class Array2D {
 
     public static void main(String[] args) {
-
+        randomShuffling();
     }
 
     public static void writingTo2DArrayExample1() {
@@ -49,6 +49,33 @@ public class Array2D {
         for (int i = 0; i < numbers.length; i++) {
             for (int j = 0; j < numbers[i].length; j++) {
                 System.out.println(numbers[i][j]);
+            }
+        }
+    }
+
+    public static void randomShuffling() {
+
+        int[][] numbers = writingTo2DArrayExample3();
+
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = 0; j < numbers[i].length; j++) {
+                int i1 = (int) (Math.random() * numbers.length);
+                int j1 = (int) (Math.random() * numbers[i].length);
+                int temp = numbers[i][j];
+                numbers[i][j] = numbers[i1][j1];
+                numbers[i1][j1] = temp;
+            }
+        }
+        comparingShuffledArrayToOriginalArray(numbers,writingTo2DArrayExample3());
+    }
+    
+        public static void comparingShuffledArrayToOriginalArray(int [][] shuffledArray,
+                int [][] originalArray) {
+        for (int i = 0; i < shuffledArray.length; i++) {
+            for (int j = 0; j < shuffledArray[i].length; j++) {
+                System.out.println("location " + i +"," + j + " of shuffled array " + shuffledArray[i][j]);
+                System.out.println("location " + i +"," + j + " of original array " + originalArray[i][j]);
+                System.out.println("");
             }
         }
     }
