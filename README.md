@@ -1,1 +1,1 @@
-Programs used for purpose of teaching CCE1010 module
+Programming examples used for purpose of teaching CCE1010 module
